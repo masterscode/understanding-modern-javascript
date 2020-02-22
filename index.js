@@ -1,40 +1,34 @@
-const getIDs = new Promise(()=>{})
+const getIDs = new Promise((resolve, reject) => {
+	setTimeout(() => {
+		resolve([ 233, 225, 545, 555 ]);
+	}, 1500);
+});
 
+const getRecipe = resID =>{
+    return new Promise((resolve, reject)=>{
+        setTimeout(id =>{
+            const recipe = {
+                title: 'fresh tomato pasta',
+                publisher: 'jonas'
+            };
+            resolve(`${id}: ${recipe.title}`)
+        }, 1500, resID)
+    })
+}
 
+const getRelated = publisher =>{
+ //code goes in here!!   
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+getIDs
+	.then((data) => {
+        console.log(data);
+        return getRecipe(data[2]);
+    })
+    .then(returnedValue => console.log(returnedValue))
+	.catch((error) => {
+		console.log('error');
+	});
 
 /*
 function getRecipe () {
@@ -72,8 +66,6 @@ const first = () =>{
 first();
 */
 
-
-
 /*
 {
     let a = 'private value';
@@ -98,4 +90,3 @@ console.log(a, b)// error: variabe a is not defined
 // console.log(fullName.endsWith('j'))
 // console.log(fullName.includes(' '))
 // console.log(fullName.repeat(4))
-
