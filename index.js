@@ -4,31 +4,47 @@ const getIDs = new Promise((resolve, reject) => {
 	}, 1500);
 });
 
-const getRecipe = resID =>{
-    return new Promise((resolve, reject)=>{
-        setTimeout(id =>{
-            const recipe = {
-                title: 'fresh tomato pasta',
-                publisher: 'jonas'
-            };
-            resolve(`${id}: ${recipe.title}`)
-        }, 1500, resID)
-    })
-}
+const getRecipe = (resID) => {
+	return new Promise((resolve, reject) => {
+		setTimeout(
+			(id) => {
+				const recipe = {
+					title: 'fresh tomato pasta',
+					publisher: 'jonas'
+				};
+				resolve(`${id}: ${recipe.title}`);
+			},
+			1500,
+			resID
+		);
+	});
+};
 
-const getRelated = publisher =>{
- //code goes in here!!   
-}
+const getRelated = (publisher) => {
+	//code goes in here!!
+};
 
-getIDs
+async function getRecipeAW(){
+    const IDs = await getIDs;
+    console.log(IDs)
+}
+getRecipeAW()
+
+
+
+
+
+
+/*getIDs
 	.then((data) => {
-        console.log(data);
-        return getRecipe(data[2]);
-    })
-    .then(returnedValue => console.log(returnedValue))
+		console.log(data);
+		return getRecipe(data[2]);
+	})
+	.then((returnedValue) => console.log(returnedValue))
 	.catch((error) => {
 		console.log('error');
-	});
+    });
+    */
 
 /*
 function getRecipe () {
