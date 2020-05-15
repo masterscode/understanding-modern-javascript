@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Previewer</title>
+    <style>
+        body {
+            font-family: fantasy;
+            background-color: whitesmoke;
+        }
+
+        .show-box {
+            margin: auto;
+            width: 70%;
+            height: auto;
+            padding: 5%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            border-radius: 5px;
+            border: thin transparent solid;
+        }
+
+        input[name='image-input'] {
+            display: none;
+        }
+
+        img {
+            width: 95px;
+            border-radius: 7px;
+            border: thick wheat solid;
+            box-shadow: 2px 2px 3px grey;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align='center'>Image Previewer</h1>
+    <div class="show-box">
+        <form action="">
+            <label for="file">
+                <img src="image/avatar6.png" alt="upload image icon" title="click to upload images" id="img-box">
+            </label>
+            <input type="file" name="image-input" id="file" accept="image/png, image/jpg, image/jpeg">
+        </form>
+    </div>
+    <script src="js/image-preview.js"></script>
+</body>
+
+</html>
